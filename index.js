@@ -106,17 +106,16 @@ create({
     authTimeout: 0,
     qrTimeout: 0,
     cacheEnabled: false,
-    useChrome: false,
-    killProcessOnBrowserClose: true,
-    throwErrorOnTosBlock: false,
+    useChrome: true,
+    executablePath: '/usr/bin/google-chrome-stable',
     chromiumArgs: [
         '--no-sandbox',
         '--disable-setuid-sandbox',
         '--disable-dev-shm-usage',
-        '--headless=new',
-        '--disable-gpu',
-        '--single-process',
-        '--no-zygote'
+        '--disable-accelerated-2d-canvas',
+        '--no-first-run',
+        '--no-zygote',
+        '--disable-gpu'
     ]
 }, (base64Qr, asciiQR) => {
     console.log(asciiQR);
