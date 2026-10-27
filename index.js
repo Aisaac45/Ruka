@@ -101,11 +101,15 @@ const start = (ruka = new Client()) => {
     })
 }
 create({
-    ...options(start),
-    useChrome: false,
+    sessionId: 'ruka-session',
+    multiDevice: true,
     authTimeout: 0,
     qrTimeout: 0,
-    headless: true,
+    restartOnCrash: start,
+    cacheEnabled: false,
+    useChrome: false,
+    killProcessOnBrowserClose: true,
+    throwErrorOnTosBlock: false,
     chromiumArgs: [
         '--no-sandbox',
         '--disable-setuid-sandbox',
@@ -115,6 +119,9 @@ create({
         '--no-zygote',
         '--disable-gpu'
     ]
+})
+    .then((ruka) => start(ruka))
+    .catch((err) => console.error(err))
 })
     .then((ruka) => start(ruka))
     .catch((err) => console.error(err))
