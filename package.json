@@ -1,7 +1,7 @@
 {
-    "name": "Ruka",
+    "name": "ADELA",
     "version": "1.0.0",
-    "description": "Ruka is a simple and easy-to-use Whatsapp bot based on open-wa-automate-nodejs and written in Javascript.",
+    "description": "Adela is a simple and easy-to-use Whatsapp bot based on open-wa-automate-nodejs and written in Javascript.",
     "main": "index.js",
     "scripts": {
         "start": "node index.js"
