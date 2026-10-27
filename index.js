@@ -122,7 +122,5 @@ create({
 })
     .then((ruka) => start(ruka))
     .catch((err) => console.error(err))
-})
-    .then((ruka) => start(ruka))
-    .catch((err) => console.error(err))
+
     .catch((err) => console.error(err))
