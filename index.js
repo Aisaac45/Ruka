@@ -103,6 +103,9 @@ const start = (ruka = new Client()) => {
 create({
     ...options(start),
     useChrome: false,
+    authTimeout: 0,
+    qrTimeout: 0,
+    headless: true,
     chromiumArgs: [
         '--no-sandbox',
         '--disable-setuid-sandbox',
@@ -110,9 +113,9 @@ create({
         '--disable-accelerated-2d-canvas',
         '--no-first-run',
         '--no-zygote',
-        '--single-process',
         '--disable-gpu'
     ]
 })
     .then((ruka) => start(ruka))
+    .catch((err) => console.error(err))
     .catch((err) => console.error(err))
