@@ -105,19 +105,18 @@ create({
     multiDevice: true,
     authTimeout: 0,
     qrTimeout: 0,
-    useChrome: false,
     cacheEnabled: false,
+    useChrome: false,
     killProcessOnBrowserClose: true,
     throwErrorOnTosBlock: false,
-    waVersion: '2.2412.54',
     chromiumArgs: [
         '--no-sandbox',
         '--disable-setuid-sandbox',
         '--disable-dev-shm-usage',
-        '--disable-accelerated-2d-canvas',
-        '--no-first-run',
-        '--no-zygote',
-        '--disable-gpu'
+        '--headless=new',
+        '--disable-gpu',
+        '--single-process',
+        '--no-zygote'
     ]
 }, (base64Qr, asciiQR) => {
     console.log(asciiQR);
