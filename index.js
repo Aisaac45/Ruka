@@ -105,9 +105,10 @@ create({
     multiDevice: true,
     authTimeout: 0,
     qrTimeout: 0,
-    restartOnCrash: start,
+    popup: true,
     cacheEnabled: false,
     useChrome: false,
+    restartOnCrash: start,
     killProcessOnBrowserClose: true,
     throwErrorOnTosBlock: false,
     chromiumArgs: [
