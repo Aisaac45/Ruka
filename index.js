@@ -108,9 +108,10 @@ create({
     popup: true,
     cacheEnabled: false,
     useChrome: false,
-    restartOnCrash: start,
     killProcessOnBrowserClose: true,
     throwErrorOnTosBlock: false,
+    headless: true,
+    qrRefreshS: 20,
     chromiumArgs: [
         '--no-sandbox',
         '--disable-setuid-sandbox',
@@ -120,6 +121,8 @@ create({
         '--no-zygote',
         '--disable-gpu'
     ]
+}, (base64Qr, asciiQR) => {
+    console.log(asciiQR);
 })
     .then((ruka) => start(ruka))
-    .catch((err) => console.error(err))
+    .catch((err) => console.error(err));
